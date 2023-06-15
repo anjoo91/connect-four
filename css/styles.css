@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box; 
+}
+
+body {
+    /* viewport units: vh (viewport height), vw, vmin (smallest between vh & vw) */
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    display: flex; /*apply flexbox to container */
+    flex-direction: column; /* stack vertically */
+    justify-content: center; /* centers vertically on main axis*/
+    align-items: center; /* centers horizontally on cross axis*/
+}
+
+header {
+    font-size: 4vmin; /*4% of smallest viewport measure*/
+    color: darkgray;
+    letter-spacing: 1vmin; /*spacing between letters*/
+}
+
+h1 {
+    color: grey;
+    font-size: 3vmin;
+
+}
+
+#markers {
+    display: grid; /*apply css grid to container*/
+    grid-template-columns: repeat(7, 10vmin); /*create 7 columns measuring 10% of vmin*/
+    gap: 1vmin;
+    margin-top: 1.5vmin;
+}
+
+#markers > div {
+    height: 10vmin;
+    border-width: 5vmin;
+    border-style: solid; /*create cell box*/
+    border-color: lightgrey transparent transparent; /*makes the left, right, and bottom parts transparent*/
+    transform: scale(0.7); /*shrink to 70% of original size*/
+}
+
+#markers > div:hover {
+    transform: scale(0.9); /*on hover grows to 90%*/
+    transition: transform 150ms ease-in; /*animation for growth*/
+    border-top-color: darkgray; /*turns gray when we hover*/
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(7, 10vmin);
+    grid-template-rows: repeat(6, 10vmin);
+    gap: 1vmin;
+    margin-top: -4vmin; /*bring board closer*/
+}
+
+#board > div {
+    border-radius: 50%;
+    border: 0.1vmin solid grey;
+}
+
+button {
+    margin-top: 4vmin;
+    padding: 2vmin;
+    font-size: 2vmin;
+    border-radius: 4vmin;
+    border: 0.1vmin solid grey;
+    color: grey;
+}
+
+button:hover {
+    color: white; /*change color of text*/
+    background-color: darkgray; /*change color of button*/
+}
